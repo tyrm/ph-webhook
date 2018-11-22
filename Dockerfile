@@ -5,5 +5,5 @@ EXPOSE 8080
 
 ENV DB_ENGINE  postgresql://postgres:5432/api
 
-ADD ph-warehouse /
-CMD ["/ph-warehouse"]
+ADD ph-webhook /
+CMD ["/ph-webhook"]
