@@ -7,7 +7,7 @@ import (
 )
 
 type WebhookCall struct {
-	ID            int
+	ID int
 
 	Timestamp     time.Time
 	Host          string
@@ -24,13 +24,13 @@ type WebhookCall struct {
 }
 
 type WebhookFile struct {
-	ID       int
+	ID int
 
 	Filename string
 	Size     int
 	Contents bytes.Buffer
 
-	Headers  map[string]string
+	Headers map[string]string
 }
 
 const sqlCallsInsert = `

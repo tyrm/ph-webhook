@@ -31,7 +31,9 @@ func HandleWebhook(response http.ResponseWriter, request *http.Request) {
 		var value string
 		for i, h := range headers {
 			value += h
-			if i < (len(headers) - 1) {value += "\n"}
+			if i < (len(headers) - 1) {
+				value += "\n"
+			}
 		}
 		newCall.Headers[name] = value
 	}
@@ -45,7 +47,9 @@ func HandleWebhook(response http.ResponseWriter, request *http.Request) {
 		var value string
 		for i, h := range query {
 			value += h
-			if i < (len(query) - 1) {value += "\n"}
+			if i < (len(query) - 1) {
+				value += "\n"
+			}
 		}
 		newCall.Query[name] = value
 	}
@@ -71,7 +75,9 @@ func HandleWebhook(response http.ResponseWriter, request *http.Request) {
 			var value string
 			for i, h := range form {
 				value += h
-				if i < (len(form) - 1) {value += "\n"}
+				if i < (len(form) - 1) {
+					value += "\n"
+				}
 			}
 			newCall.PostForm[name] = value
 		}
@@ -111,7 +117,9 @@ func HandleWebhook(response http.ResponseWriter, request *http.Request) {
 					var value string
 					for i, h := range headers {
 						value += h
-						if i < (len(headers) - 1) {value += "\n"}
+						if i < (len(headers) - 1) {
+							value += "\n"
+						}
 					}
 					newFile.Headers[subName] = value
 				}
@@ -119,7 +127,6 @@ func HandleWebhook(response http.ResponseWriter, request *http.Request) {
 				newCall.Files[name] = newFile
 			}
 		}
-
 
 	}
 	go newCall.Save()
@@ -129,4 +136,3 @@ func HandleWebhook(response http.ResponseWriter, request *http.Request) {
 
 	return
 }
-

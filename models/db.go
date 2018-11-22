@@ -9,7 +9,7 @@ import (
 	"github.com/rubenv/sql-migrate"
 )
 
-var DB     *sql.DB
+var DB *sql.DB
 var logger *loggo.Logger
 
 func CloseDB() {
@@ -17,7 +17,7 @@ func CloseDB() {
 }
 
 func InitDB(connectionString string) {
-	newLogger :=  loggo.GetLogger("puphaus.models")
+	newLogger := loggo.GetLogger("puphaus.models")
 	logger = &newLogger
 
 	logger.Debugf("Connecting to Database")

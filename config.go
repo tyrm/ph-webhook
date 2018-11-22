@@ -6,7 +6,7 @@ import (
 )
 
 type Config struct {
-	DBEngine        string
+	DBEngine string
 }
 
 func CollectConfig() (config Config) {
