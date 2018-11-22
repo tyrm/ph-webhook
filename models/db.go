@@ -31,6 +31,7 @@ func InitDB(connectionString string) {
 	DB.SetMaxIdleConns(5)
 
 	logger.Debugf("Loading Migrations")
+	migrate.SetTable("webhook_migrations")
 	migrations := &migrate.PackrMigrationSource{
 		Box: packr.NewBox("./migrations"),
 	}
