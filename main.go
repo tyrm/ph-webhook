@@ -8,7 +8,6 @@ import (
 
 	"./models"
 	"./uniwebhook"
-	"./web"
 	"github.com/gorilla/mux"
 	"github.com/juju/loggo"
 )
@@ -29,9 +28,8 @@ func main() {
 
 	// Create Top Router
 	r := mux.NewRouter()
-	r.HandleFunc("/webhook", uniwebhook.HandleWebhook)
-
-	r.PathPrefix("/").HandlerFunc(web.HandleNotImplemented) // Top Router Catch All
+	r.Use(uniwebhook.LoggingMiddleware)
+	r.PathPrefix("/").HandlerFunc(uniwebhook.HandleCat) // Top Router Catch All
 
 	go http.ListenAndServe(":8080", r)
 
