@@ -63,6 +63,8 @@ CREATE TABLE "public"."webhook_calls_files_headers" (
 
 -- +migrate Down
 -- SQL section 'Down' is executed when this migration is rolled back
+DROP TABLE "public"."webhook_calls_files_headers";
+DROP TABLE "public"."webhook_calls_files";
 DROP TABLE "public"."webhook_calls_form_params";
 DROP TABLE "public"."webhook_calls_queries";
 DROP TABLE "public"."webhook_calls_header";
